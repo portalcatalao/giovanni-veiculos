@@ -19,7 +19,7 @@ export default function Home() {
     <main>
       <div className="w-full max-w-7xl max-2xl:px-4 py-8 flex flex-col items-center mx-auto">
         <h1 className="text-2xl lg:text-4xl font-semibold max-w-lg text-center">Descubra o Veículo Perfeito na Giovanni Veículos</h1>
-        <div className="w-full max-w-2xl bg-zinc-700 p-4 rounded-md mx-auto mt-8 flex flex-col gap-4">
+        <div className="w-full max-w-2xl bg-zinc-800 p-4 rounded-md mx-auto mt-8 flex flex-col gap-4 border border-white/5">
           <div className="flex max-lg:flex-col gap-4">
             <Select title="Marca" {...brand} />
             <Select title="Modelo" {...model} />

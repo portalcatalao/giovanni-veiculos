@@ -8,8 +8,8 @@ export default function VehicleViewPage({ params }: { params: { id: Array<String
     const vehicle = vehicles.find(item => item.id == +id);
     const date = new Date(vehicle.created_at.date);
     return (
-        <main className="flex flex-col gap-8 flex-1 my-8">
-            <div className="w-full max-w-7xl mx-auto grid grid-cols-4 gap-6">
+        <main className="flex flex-col gap-8 flex-1 max-lg:mb-8 lg:my-8">
+            <div className="w-full max-w-7xl mx-auto grid grid-cols-4 gap-6 max-lg:hidden">
                 {vehicle.gallery.images.map((item, index) => {
                     if (index < 3) {
                         return (
@@ -30,8 +30,11 @@ export default function VehicleViewPage({ params }: { params: { id: Array<String
                     }
                 })}
             </div>
-            <div className="w-full max-w-7xl mx-auto grid grid-cols-7 gap-6">
-                <div className="col-span-5 flex flex-col flex-1">
+            <div className="w-full h-[248px] relative overflow-hidden">
+                <img src={'https://portalautos.com.br/' + vehicle.gallery.images[0].path} alt={vehicle.gallery.images[0].name} className="object-cover w-full h-full" />
+            </div>
+            <div className="w-full max-w-7xl max-2xl:px-4 mx-auto grid grid-cols-1 lg:grid-cols-7 gap-6">
+                <div className="lg:col-span-5 flex flex-col flex-1">
                     <span className="px-4 py-1 bg-zinc-600 w-fit rounded-md text-sm font-medium mb-4">{vehicle.new ? 'Novo' : 'Usado'}</span>
                     <span className="uppercase text-lg font-semibold">{vehicle.version.model.brand.name} {vehicle.version.model.name}</span>
                     <span className="uppercase text-sm text-white/70">{vehicle.version.name}</span>
@@ -41,9 +44,9 @@ export default function VehicleViewPage({ params }: { params: { id: Array<String
                         <span className="text-sm">{vehicle.mileage_traveled} KM</span>
                     </div>
                 </div>
-                <div className="col-span-2 h-fit bg-zinc-800 rounded-md flex flex-col gap-4 p-4">
-                    <ButtonPrimary title="Fale com o vendedor" full={true}/>
-                    <ButtonSecondary title="Simular financiamento" full={true}/>
+                <div className="lg:col-span-2 h-fit bg-zinc-800 rounded-md flex flex-col gap-4 p-4">
+                    <ButtonPrimary title="Fale com o vendedor" full={true} />
+                    <ButtonSecondary title="Simular financiamento" full={true} />
                 </div>
             </div>
         </main>

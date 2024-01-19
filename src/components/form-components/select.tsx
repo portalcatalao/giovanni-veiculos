@@ -54,7 +54,7 @@ const Select = ({ onChange, title, value, onBlur, options }: Props) => {
             {title && <label className='text-sm font-medium mb-1'>{title}</label>}
             <div className="relative flex flex-col w-full" ref={inputRef}>
                 <span
-                    className={`flex items-center cursor-pointer w-full px-4 py-2 rounded border bg-zinc-800 focus:outline-none focus:border-zinc-500 ${isOpen ? 'border-zinc-600' : 'border-zinc-700'}`}
+                    className={`flex items-center cursor-pointer w-full px-4 py-2 rounded border bg-zinc-700 focus:outline-none focus:border-zinc-500 ${isOpen ? 'border-zinc-600' : 'border-zinc-700'}`}
                     onClick={() => setIsOpen(true)}
                 >
                     {value?.name ?
