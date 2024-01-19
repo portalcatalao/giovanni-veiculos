@@ -13,7 +13,7 @@ export function ButtonSecondary({title, full, Icon, ...options}: Props) {
         <button className={`
             ${full ? 'w-full' : 'w-fit'}
             h-12 transition-colors rounded-md px-6 font-medium text-base
-            bg-zinc-700 hover:bg-zinc-600 active:bg-zinc-500
+            bg-zinc-700 hover:bg-zinc-700/80 active:bg-zinc-700/60
             flex items-center justify-center gap-2
         `} {...options}>
             {Icon && <span className="text-xl text-white"><Icon /></span>}

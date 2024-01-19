@@ -13,7 +13,7 @@ export function ButtonPrimary({title, full, Icon, ...options}: Props) {
         <button className={`
             ${full ? 'w-full' : 'w-fit'}
             h-12 transition-colors rounded-md px-6 text-white font-medium text-base
-            bg-primary-500 hover:bg-primary-600 active:bg-primary-600/90
+            bg-primary-500 hover:bg-primary-500/80 active:bg-primary-500/60
             flex items-center justify-center gap-2
         `} {...options}>
             {Icon && <span className="text-xl text-white"><Icon /></span>}
