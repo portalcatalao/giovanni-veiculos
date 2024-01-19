@@ -30,7 +30,7 @@ export default function VehicleViewPage({ params }: { params: { id: Array<String
                     }
                 })}
             </div>
-            <div className="w-full h-[248px] relative overflow-hidden">
+            <div className="w-full h-[248px] relative overflow-hidden lg:hidden">
                 <img src={'https://portalautos.com.br/' + vehicle.gallery.images[0].path} alt={vehicle.gallery.images[0].name} className="object-cover w-full h-full" />
             </div>
             <div className="w-full max-w-7xl max-2xl:px-4 mx-auto grid grid-cols-1 lg:grid-cols-7 gap-6">
