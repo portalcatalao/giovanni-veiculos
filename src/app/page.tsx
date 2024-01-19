@@ -17,15 +17,17 @@ export default function Home() {
 
   return (
     <main>
-      <div className="w-full max-w-7xl max-2xl:px-4 py-8 flex flex-col items-center mx-auto">
-        <h1 className="text-2xl lg:text-4xl font-semibold max-w-lg text-center">Descubra o Veículo Perfeito na Giovanni Veículos</h1>
-        <div className="w-full max-w-2xl bg-zinc-800 p-4 rounded-md mx-auto mt-8 flex flex-col gap-4 border border-white/5">
-          <div className="flex max-lg:flex-col gap-4">
-            <Select title="Marca" {...brand} />
-            <Select title="Modelo" {...model} />
-          </div>
-          <div className="flex justify-end">
-            <ButtonPrimary title="Buscar veículos" />
+      <div className="bg-zinc-950">
+        <div className="w-full max-w-7xl max-2xl:px-4 py-8 flex flex-col items-center mx-auto">
+          <h1 className="text-2xl lg:text-4xl font-semibold max-w-lg text-center">Descubra o Veículo Perfeito na Giovanni Veículos</h1>
+          <div className="w-full max-w-2xl bg-zinc-800 p-4 rounded-md mx-auto mt-8 flex flex-col gap-4 border border-white/5">
+            <div className="flex max-lg:flex-col gap-4">
+              <Select title="Marca" {...brand} />
+              <Select title="Modelo" {...model} />
+            </div>
+            <div className="flex justify-end">
+              <ButtonPrimary title="Buscar veículos" />
+            </div>
           </div>
         </div>
       </div>
@@ -33,7 +35,7 @@ export default function Home() {
         <div className="md:col-span-2 lg:col-span-3 2xl:col-span-4">
           <h2 className="text-2xl font-semibold">Veículos em destaque | Giovanni Veículos</h2>
         </div>
-        {vehicles.map(item => <CardVehicle vehicle={item}/>)}
+        {vehicles.map(item => <CardVehicle vehicle={item} />)}
         <div className="md:col-span-2 lg:col-span-3 2xl:col-span-4">
           <ButtonPrimary title="Ver estoque completo" />
         </div>
