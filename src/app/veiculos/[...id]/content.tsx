@@ -64,7 +64,7 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
                     </div>
                 </div>
                 <div className="lg:col-span-2 h-fit bg-zinc-800 rounded-md flex flex-col gap-4 p-4">
-                    <ProposalForm />
+                    <ProposalForm vehicle={vehicle}/>
                     <ButtonSecondary title="Simular financiamento" full={true} />
                 </div>
             </div>

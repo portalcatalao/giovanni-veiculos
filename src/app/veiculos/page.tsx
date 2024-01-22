@@ -29,7 +29,7 @@ export default async function VehiclesPage({searchParams}: {searchParams: Filter
     const vehicles = data.result?.vehicles ?? [];
 
     return (
-        <main className="flex gap-8 flex-1 w-full max-w-7xl mx-auto py-8">
+        <main className="flex max-lg:flex-col max-2xl:px-4 gap-8 flex-1 w-full max-w-7xl mx-auto py-8">
             <FilterForm brands={brands} searchParams={searchParams} />
             <div className="flex flex-col gap-8 flex-1">
                 <div>

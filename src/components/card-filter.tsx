@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export function CardVehicle({ vehicle }) {
     return (
-        <Link href={`/veiculos/${vehicle.version.model.brand.id_string}/${vehicle.version.model.id_string}/${vehicle.version.id_string}_${vehicle.id}`} className="p-4 bg-zinc-800 rounded-md flex gap-4 w-full">
-            <div className="w-[348px] h-[248px] relative rounded overflow-hidden">
+        <Link href={`/veiculos/${vehicle.version.model.brand.id_string}/${vehicle.version.model.id_string}/${vehicle.version.id_string}_${vehicle.id}`} className="p-4 bg-zinc-800 rounded-md min-lg:flex gap-4 w-full">
+            <div className="w-full min-lg:w-[348px] h-[248px] relative rounded overflow-hidden">
                 <img src={'https://portalautos.com.br/' + vehicle.gallery.images[0].path} alt={vehicle.gallery.images[0].name} className="object-cover w-full h-full" />
             </div>
             <div className="flex flex-1 flex-col justify-between max-lg:mt-4">
