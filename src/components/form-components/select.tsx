@@ -73,7 +73,7 @@ const Select = ({ onChange, title, value, onBlur, options, placeholder }: Props)
                     <button onClick={() => setIsOpen(!isOpen)}><FiChevronDown /></button>
                 </span>
                 {isOpen && (
-                    <div className="absolute top-[44px] z-[9999] w-full mt-2 bg-white rounded border max-h-72 overflow-auto">
+                    <div className="absolute top-[44px] z-[9999] w-full mt-2 bg-zinc-700 border-zinc-600 rounded border max-h-72 overflow-auto">
                         <ul className="py-1">
                             {options.filter((option) =>
                                 option.name.toLowerCase().includes(inputValue?.toLowerCase() ?? '')
@@ -84,7 +84,7 @@ const Select = ({ onChange, title, value, onBlur, options, placeholder }: Props)
                                 .map((option, index) => (
                                     <li
                                         key={index}
-                                        className={`px-4 py-2 cursor-pointer hover:bg-gray-200 ${value?.id === option.id && 'bg-purple-100 text-purple-900 font-medium'} ${highlightedIndex === index && 'bg-gray-100'}`}
+                                        className={`px-4 py-2 cursor-pointer hover:bg-zinc-800 ${value?.id === option.id && 'bg-purple-100 text-purple-900 font-medium'} ${highlightedIndex === index && 'bg-gray-100'}`}
                                         onClick={() => handleOptionClick(option)}
                                     >
                                         {option.name}

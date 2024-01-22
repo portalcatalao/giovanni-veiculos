@@ -6,3 +6,10 @@ body {
   background: #1d1d1d;
   color: #fff;
 }
+
+.swiper-slide {
+  width: fit-content !important;
+}
+.swiper {
+  position: unset !important;
+}

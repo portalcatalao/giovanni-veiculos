@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Keyboard, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./styles.module.scss";
+import 'swiper/css';
 import { Slide } from "./components/Slide";
 import { FiX } from "react-icons/fi";
 import { ButtonIcon } from "../buttons/button-icon";
@@ -25,18 +25,19 @@ export function GalleryView({ close, active, show, images }) {
 
     return (
         <div className={`fixed top-0 left-0 w-full h-screen z-[9999] bg-black bg-opacity-70`} style={{ visibility: !show ? 'hidden' : 'visible' }}>
-            <div className={'w-full max-w-7xl mx-auto'}>
-                <div className={`absolute top-4 right-0 z-[9999]`} onClick={close}>
+            <div className={'w-full max-w-7xl mx-auto py-8'}>
+                <div className={`absolute top-4 right-4 z-[9999]`} onClick={close}>
                     <ButtonIcon Icon={FiX} />
                 </div>
                 <Swiper
-                    id={styles.swiper}
-                    className="swiper-gallery"
+                    id={'swiper'}
+                    className="w-full"
                     pagination={{
                         type: "fraction",
                     }}
                     loop
                     keyboard
+                    slidesPerView={'auto'}
                     modules={[Keyboard, Pagination, Navigation]}
                     onSlideChange={(swiper) => {
                         { swiper.isBeginning && setState('start') }
@@ -44,10 +45,10 @@ export function GalleryView({ close, active, show, images }) {
                         { !swiper.isBeginning && !swiper.isEnd && setState('progress') }
                     }}
                     navigation
-                    initialSlide={active}
+                    //initialSlide={active}
                 >
                     {images.map((item, index) => (
-                        <SwiperSlide key={index} id={styles.swiper_slide}>
+                        <SwiperSlide key={index} id={'swiper-slide'}>
                             <Slide image={item} alt={item} />
                         </SwiperSlide>
                     ))}
