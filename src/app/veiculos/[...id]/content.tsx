@@ -44,7 +44,7 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
             </div>
             <Swiper id="gallery-mobile" slidesPerView={'auto'} className="w-full">
                 {vehicle.gallery.images.map(item =>
-                    <SwiperSlide>
+                    <SwiperSlide key={item.id}>
                         <div className="w-screen h-[248px] relative overflow-hidden lg:hidden">
                             <img src={'https://portalautos.com.br/' + item.path} alt={item.name} className="object-cover w-full h-full" />
                         </div>
