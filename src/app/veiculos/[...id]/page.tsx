@@ -1,14 +1,15 @@
-import { ButtonPrimary } from "@/components/buttons/button-primary";
 import { ButtonSecondary } from "@/components/buttons/button-secondary";
+import { ProposalForm } from "@/components/forms/proposal-form";
 import { vehicles } from "@/utils/data";
 
 export default function VehicleViewPage({ params }: { params: { id: Array<String> } }) {
     const versionId = params.id[params.id.length - 1].split('_');
     const id = versionId[versionId.length - 1];
     const vehicle = vehicles.find(item => item.id == +id);
-    const date = new Date(vehicle.created_at.date);
+
     return (
         <main className="flex flex-col gap-8 flex-1 max-lg:mb-8 lg:my-8">
+            
             <div className="w-full max-w-7xl mx-auto grid grid-cols-4 gap-6 max-lg:hidden">
                 {vehicle.gallery.images.map((item, index) => {
                     if (index < 3) {
@@ -45,7 +46,7 @@ export default function VehicleViewPage({ params }: { params: { id: Array<String
                     </div>
                 </div>
                 <div className="lg:col-span-2 h-fit bg-zinc-800 rounded-md flex flex-col gap-4 p-4">
-                    <ButtonPrimary title="Fale com o vendedor" full={true} />
+                    <ProposalForm />
                     <ButtonSecondary title="Simular financiamento" full={true} />
                 </div>
             </div>

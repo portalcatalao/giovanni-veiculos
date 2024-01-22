@@ -15,7 +15,7 @@ export function Header() {
                         <Link href={'/'}>Home</Link>
                     </li>
                     <li>
-                        <Link href={'/'} className="text-white/65">Estoque</Link>
+                        <Link href={'/veiculos'} className="text-white/65">Estoque</Link>
                     </li>
                     <li>
                         <Link href={'/'} className="text-white/65">Financiamento</Link>

@@ -4,13 +4,14 @@ import { FiChevronDown, FiX } from 'react-icons/fi';
 
 interface Props {
     title?: string;
+    placeholder?: string;
     value: OptionSelectProps;
     onChange: any;
     options?: OptionSelectProps[];
     onBlur?: (str: string) => void;
 }
 
-const Select = ({ onChange, title, value, onBlur, options }: Props) => {
+const Select = ({ onChange, title, value, onBlur, options, placeholder }: Props) => {
     const inputRef = React.useRef(null);
     const [inputValue, setInputValue] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +51,7 @@ const Select = ({ onChange, title, value, onBlur, options }: Props) => {
     }, [value]);
 
     return (
-        <div className="relative flex flex-col w-full flex-1">
+        <div className="relative flex flex-col w-full h-fit">
             {title && <label className='text-sm font-medium mb-1'>{title}</label>}
             <div className="relative flex flex-col w-full" ref={inputRef}>
                 <span
@@ -63,7 +64,7 @@ const Select = ({ onChange, title, value, onBlur, options }: Props) => {
                         >
                             {value?.name}
                         </span> :
-                        <span className="w-full focus:outline-none h-8 flex items-center text-gray-400 text-sm font-normal">Escolha um valor</span>
+                        <span className="w-full focus:outline-none h-8 flex items-center text-gray-400 text-sm font-normal">{placeholder ?? 'Escolha um valor'}</span>
                     }
                     {value?.name && <button className='mr-2' onClick={() => {
                         onChange(null)
