@@ -12,7 +12,7 @@ export default function VehiclesPage() {
                     <span>Exibindo 8 de 20 resultados</span>
                 </div>
                 <ul className="flex flex-col gap-6">
-                    {vehicles.map(item => <CardVehicle vehicle={item}/>)}
+                    {vehicles.map(item => <CardVehicle key={item.id} vehicle={item}/>)}
                 </ul>
                 <ButtonPrimary title="Ver mais resultados"/>
             </div>

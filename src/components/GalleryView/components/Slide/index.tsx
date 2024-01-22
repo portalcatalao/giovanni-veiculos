@@ -1,6 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import { Container, Image } from "./styles";
-//import { getImageUrl } from "../../../../helpers/image";
 
 export function Slide({ image, alt }) {
     const ref = useRef(null);
@@ -11,8 +9,8 @@ export function Slide({ image, alt }) {
     }, []);
 
     return (
-        <Container ref={ref}>
+        <div className="w-full max-w-7xl flex justify-center overflow-hidden" ref={ref}>
             <img src={'https://portalautos.com.br/' + image} alt={alt} className="object-cover w-full h-full" />
-        </Container>
+        </div>
     )
 }
