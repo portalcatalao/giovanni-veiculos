@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ButtonIcon } from "./buttons/button-icon";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function Footer() {
     const router = useRouter();
@@ -32,11 +33,11 @@ export function Footer() {
                     </div>
                     <div className="flex flex-col gap-2">
                         <h4 className="mb-4 text-lg font-semibold">Menu</h4>
-                        <span className="text-sm text-white/80">Home</span>
-                        <span className="text-sm text-white/80">Estoque</span>
-                        <span className="text-sm text-white/80">Financiamento</span>
-                        <span className="text-sm text-white/80">Empresa</span>
-                        <span className="text-sm text-white/80">Contato</span>
+                        <Link href={'/'} className="text-sm hover:text-white text-white/80">Home</Link>
+                        <Link href={'/estoque'} className="text-sm hover:text-white text-white/80">Estoque</Link>
+                        <Link href={'/financiamento'} className="text-sm hover:text-white text-white/80">Financiamento</Link>
+                        <Link href={'/empresa'} className="text-sm hover:text-white text-white/80">Empresa</Link>
+                        <Link href={'/contato'} className="text-sm hover:text-white text-white/80">Contato</Link>
                     </div>
                 </div>
             </div>
