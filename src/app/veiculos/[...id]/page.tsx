@@ -26,7 +26,9 @@ export async function generateMetadata(
         openGraph: {
             title: `${vehicle.version.model.brand.name} ${vehicle.version.model.name} - ${vehicle.version.name} - Giovanni Veículos Multimarcas`.toUpperCase(),
             description: `${vehicle.version.model.brand.name} ${vehicle.version.model.name} - ${vehicle.version.name}. Faça nos uma visita para conhecer este e outros de nossos veículos`,
-            images: ['https://portalautos.com.br/' + vehicle.gallery?.images[0]?.path]
+            images: ['https://portalautos.com.br/' + vehicle.gallery?.images[0]?.path],
+            siteName: 'Giovanni Veículos Multimarcas',
+            type: 'website',
         }
     }
 }
