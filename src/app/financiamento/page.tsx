@@ -1,7 +1,17 @@
+'use client'
+
 import { ButtonPrimary } from "@/components/buttons/button-primary";
 import Image from "next/image";
 
 export default function FinancingPage() {
+    const handleSubmit = async () => {
+        const wpp = "556492496844";
+            const text = encodeURIComponent(`Olá, gostaria de simular um financiamento de um veículo.`);
+            const whatsappLink = `https://api.whatsapp.com/send?phone=${wpp}&text=${text}`;
+
+            window.open(whatsappLink, "_blank");
+    }
+
     return (
         <main className="flex-1 w-full max-w-7xl max-2xl:px-4 mx-auto py-8 flex flex-col gap-8">
             <div className="relative h-[390px] max-lg:h-[100px] w-full rounded-lg overflow-hidden">
@@ -12,7 +22,7 @@ export default function FinancingPage() {
                     <h1 className="text-3xl max-lg:text-2xl font-semibold">Otimize seu financiamento automotivo com as mais atrativas taxas disponíveis no mercado.</h1>
                     <p className="text-white/80 leading-8">Adquira o veículo dos seus sonhos, selecione o modelo que mais lhe agrada e descubra as condições mais vantajosas, totalmente compatíveis com o seu orçamento.</p>
                     <p className="text-white/80 leading-8">Entre em contato conosco para realizar uma simulação personalizada e encontrar a melhor opção para você!</p>
-                    <ButtonPrimary title="Solicitar financiamento" />
+                    <ButtonPrimary title="Solicitar financiamento" onClick={handleSubmit} />
                 </div>
                 <div className="w-full max-w-[520px] max-lg:h-[190px] h-[360px] relative overflow-hidden rounded-lg">
                     <Image src="/banner-financiamento.jpg" alt="" fill className="object-cover" />

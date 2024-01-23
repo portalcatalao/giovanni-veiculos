@@ -3,7 +3,6 @@
 import { GalleryView } from "@/components/GalleryView";
 import { ButtonSecondary } from "@/components/buttons/button-secondary";
 import { ProposalForm } from "@/components/forms/proposal-form";
-import { fetchData } from "@/hooks/useFetch";
 import { IVehicle } from "@/interfaces/vehicle";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,6 +10,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
     const [active, setActive] = useState(0);
     const [show, setShow] = useState(false);
+
+    const handleSubmit = async () => {
+        const wpp = "556492496844";
+            const text = encodeURIComponent(`Olá, gostaria de simular um financiamento de um veículo.`);
+            const whatsappLink = `https://api.whatsapp.com/send?phone=${wpp}&text=${text}`;
+
+            window.open(whatsappLink, "_blank");
+    }
 
     return (
         <main className="flex flex-col gap-8 flex-1 max-lg:mb-8 lg:my-8">
@@ -65,7 +72,7 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
                 </div>
                 <div className="lg:col-span-2 h-fit bg-zinc-800 rounded-md flex flex-col gap-4 p-4">
                     <ProposalForm vehicle={vehicle}/>
-                    <ButtonSecondary title="Simular financiamento" full={true} />
+                    <ButtonSecondary title="Simular financiamento" full={true} onClick={handleSubmit} />
                 </div>
             </div>
         </main>
