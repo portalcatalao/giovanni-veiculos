@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Giovanni Veículos Multimarcas",
     description: "Especializados na venda de veículos novos e usados, nacionais e importados.",
-    images: '/default.png',
+    images: ['/default.png'],
   }
 };
 
