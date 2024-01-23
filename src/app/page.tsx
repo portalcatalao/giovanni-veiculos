@@ -4,6 +4,7 @@ import { FilterHome } from "@/components/forms/filter-home";
 import { fetchData } from "@/hooks/useFetch";
 import { IBrand, IVehicle } from "@/interfaces/vehicle";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home() {
   const { data: brands }: { data: Array<IBrand> } = await fetchData('fipe/car/brand/list');
@@ -31,7 +32,11 @@ export default async function Home() {
         </div>
         {vehicles.map(item => <CardVehicle key={item.id} vehicle={item} />)}
         <div className="md:col-span-2 lg:col-span-3 2xl:col-span-4">
-          <ButtonPrimary title="Ver estoque completo" />
+          <Link href={'/veiculos'} className={`
+            w-fit h-12 transition-colors rounded-md px-6 text-white font-medium text-base
+            bg-primary-500 hover:bg-primary-500/80 active:bg-primary-500/60
+            flex items-center justify-center gap-2
+        `}>Ver estoque completo</Link>
         </div>
       </div>
       <div className="w-full h-[164px] 2xl:h-[508px]">

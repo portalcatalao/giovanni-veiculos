@@ -13,10 +13,10 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
 
     const handleSubmit = async () => {
         const wpp = "556492496844";
-            const text = encodeURIComponent(`Olá, gostaria de simular um financiamento de um veículo.`);
-            const whatsappLink = `https://api.whatsapp.com/send?phone=${wpp}&text=${text}`;
+        const text = encodeURIComponent(`Olá, gostaria de simular um financiamento de um veículo.`);
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${wpp}&text=${text}`;
 
-            window.open(whatsappLink, "_blank");
+        window.open(whatsappLink, "_blank");
     }
 
     return (
@@ -65,13 +65,23 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
                     <span className="uppercase text-lg font-semibold">{vehicle.version.model.brand.name} {vehicle.version.model.name}</span>
                     <span className="uppercase text-sm text-white/70">{vehicle.version.name}</span>
                     <span className="uppercase text font-medium mt-4">Valor a combinar</span>
-                    <div className="flex justify-between mt-6 border-t border-zinc-700 pt-2">
+                    <div className="flex justify-between mt-6 border-t border-zinc-700 py-4">
                         <span className="text-sm">{vehicle.year_manufacture} - {vehicle.year_model}</span>
                         <span className="text-sm">{vehicle.mileage_traveled} KM</span>
                     </div>
+                    {vehicle.description &&
+                        <div className="flex flex-col gap-1">
+                            <strong>Descrição</strong>
+                            <p className="capitalize">{vehicle.description}</p>
+                        </div>}
+                    {vehicle.color &&
+                        <div className="flex flex-col gap-1">
+                            <strong>Cor do veículo</strong>
+                            <p className="capitalize">{vehicle.color.name}</p>
+                        </div>}
                 </div>
                 <div className="lg:col-span-2 h-fit bg-zinc-800 rounded-md flex flex-col gap-4 p-4">
-                    <ProposalForm vehicle={vehicle}/>
+                    <ProposalForm vehicle={vehicle} />
                     <ButtonSecondary title="Simular financiamento" full={true} onClick={handleSubmit} />
                 </div>
             </div>

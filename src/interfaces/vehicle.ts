@@ -23,7 +23,14 @@ export interface IVehicle {
     views: number,
     version: IVersion,
     number_doors?: number,
-    type: string
+    type: string,
+    description?: string
+    color: {
+        id: number,
+        id_string: string,
+        name: string,
+        cod?: number
+    }
 }
 
 interface IImage {
