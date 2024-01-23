@@ -6,8 +6,10 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { ButtonIcon } from "./buttons/button-icon";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export function Header() {
+    const path = usePathname();
     const [show, setShow] = useState(false);
 
     return (
@@ -32,19 +34,19 @@ export function Header() {
                         </div>
                     </li>
                     <li>
-                        <Link href={'/'}>Home</Link>
+                        <Link href={'/'} className={path != '/' ? "text-white/65" : "font-medium"}>Home</Link>
                     </li>
                     <li>
-                        <Link href={'/veiculos'} className="text-white/65">Estoque</Link>
+                        <Link href={'/veiculos'} className={path != '/veiculos' ? "text-white/65" : "font-medium"}>Estoque</Link>
                     </li>
                     <li>
-                        <Link href={'/'} className="text-white/65">Financiamento</Link>
+                        <Link href={'/financiamento'} className={path != '/financiamento' ? "text-white/65" : "font-medium"}>Financiamento</Link>
                     </li>
                     <li>
-                        <Link href={'/'} className="text-white/65">Empresa</Link>
+                        <Link href={'/empresa'} className={path != '/empresa' ? "text-white/65" : "font-medium"}>Empresa</Link>
                     </li>
                     <li>
-                        <Link href={'/'} className="text-white/65">Contato</Link>
+                        <Link href={'/contato'} className={path != '/contato' ? "text-white/65" : "font-medium"}>Contato</Link>
                     </li>
                 </ul>
             </nav>
