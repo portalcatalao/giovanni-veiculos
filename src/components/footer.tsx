@@ -1,8 +1,13 @@
+'use client'
+
 import Image from "next/image";
 import { ButtonIcon } from "./buttons/button-icon";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export function Footer() {
+    const router = useRouter();
+
     return (
         <footer className="flex flex-col">
             <div className="bg-zinc-800">
@@ -10,9 +15,8 @@ export function Footer() {
                     <div className="flex flex-col gap-2">
                         <Image src={'/logo.png'} alt="" width={160} height={56} />
                         <div className="flex gap-2 mt-4">
-                            <ButtonIcon Icon={FaInstagram} />
-                            <ButtonIcon Icon={FaFacebookF} />
-                            <ButtonIcon Icon={FaYoutube} />
+                            <ButtonIcon Icon={FaInstagram} onClick={() => router.push('https://www.instagram.com/giovannivm')} />
+                            <ButtonIcon Icon={FaFacebookF} onClick={() => router.push('https://www.facebook.com/giovannivmcatalao')} />
                         </div>
                     </div>
                     <div className="flex flex-col gap-2">

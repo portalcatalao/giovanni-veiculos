@@ -29,24 +29,23 @@ export function Header() {
                             <div className="flex gap-2 mt-4">
                                 <ButtonIcon Icon={FaInstagram} />
                                 <ButtonIcon Icon={FaFacebookF} />
-                                <ButtonIcon Icon={FaYoutube} />
                             </div>
                         </div>
                     </li>
                     <li>
-                        <Link href={'/'} className={path != '/' ? "text-white/65" : "font-medium"}>Home</Link>
+                        <Link href={'/'} onClick={() => setShow(false)} className={path != '/' ? "text-white/65" : "font-medium"}>Home</Link>
                     </li>
                     <li>
-                        <Link href={'/veiculos'} className={path != '/veiculos' ? "text-white/65" : "font-medium"}>Estoque</Link>
+                        <Link href={'/veiculos'} onClick={() => setShow(false)} className={path != '/veiculos' ? "text-white/65" : "font-medium"}>Estoque</Link>
                     </li>
                     <li>
-                        <Link href={'/financiamento'} className={path != '/financiamento' ? "text-white/65" : "font-medium"}>Financiamento</Link>
+                        <Link href={'/financiamento'} onClick={() => setShow(false)} className={path != '/financiamento' ? "text-white/65" : "font-medium"}>Financiamento</Link>
                     </li>
                     <li>
-                        <Link href={'/empresa'} className={path != '/empresa' ? "text-white/65" : "font-medium"}>Empresa</Link>
+                        <Link href={'/empresa'} onClick={() => setShow(false)} className={path != '/empresa' ? "text-white/65" : "font-medium"}>Empresa</Link>
                     </li>
                     <li>
-                        <Link href={'/contato'} className={path != '/contato' ? "text-white/65" : "font-medium"}>Contato</Link>
+                        <Link href={'/contato'} onClick={() => setShow(false)} className={path != '/contato' ? "text-white/65" : "font-medium"}>Contato</Link>
                     </li>
                 </ul>
             </nav>

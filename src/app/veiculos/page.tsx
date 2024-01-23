@@ -31,9 +31,9 @@ export default async function VehiclesPage({searchParams}: {searchParams: Filter
     return (
         <main className="flex max-lg:flex-col max-2xl:px-4 gap-8 flex-1 w-full max-w-7xl mx-auto py-8">
             <FilterForm brands={brands} searchParams={searchParams} />
-            <div className="flex flex-col gap-8 flex-1">
+            <div className="flex flex-col gap-6 flex-1">
                 <div>
-                    <span>Resultados</span>
+                    <span className="text-xl font-medium">Veículos encontrados</span>
                 </div>
                 <ul className="flex flex-col gap-6">
                     {vehicles.map(item => <CardVehicle key={item.id} vehicle={item} />)}
