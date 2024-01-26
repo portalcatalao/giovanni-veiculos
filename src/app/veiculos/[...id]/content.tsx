@@ -3,6 +3,7 @@
 import { GalleryView } from "@/components/GalleryView";
 import { ButtonSecondary } from "@/components/buttons/button-secondary";
 import { ProposalForm } from "@/components/forms/proposal-form";
+import { maskPrice } from "@/helpers/mask";
 import { IVehicle } from "@/interfaces/vehicle";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -64,7 +65,7 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
                     <span className="px-4 py-1 bg-zinc-600 w-fit rounded-md text-sm font-medium mb-4">{vehicle.new ? 'Novo' : 'Usado'}</span>
                     <span className="uppercase text-lg font-semibold">{vehicle.version.model.brand.name} {vehicle.version.model.name}</span>
                     <span className="uppercase text-sm text-white/70">{vehicle.version.name}</span>
-                    <span className="uppercase text font-medium mt-4">Valor a combinar</span>
+                    <span className="uppercase text font-medium mt-4">{vehicle.price ? 'R$ ' + maskPrice(vehicle.price) : 'Valor a combinar'}</span>
                     <div className="flex justify-between mt-6 border-t border-zinc-700 py-4">
                         <span className="text-sm">{vehicle.year_manufacture} - {vehicle.year_model}</span>
                         <span className="text-sm">{vehicle.mileage_traveled} KM</span>
