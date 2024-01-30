@@ -11,6 +11,8 @@ export default async function Home() {
   const { data }: { data: { result: { vehicles: Array<IVehicle> } } } = await fetchData('ad/list?limit=8');
   const vehicles = data.result.vehicles;
 
+  console.log(vehicles[0]);
+
   return (
     <main>
       <div className="bg-zinc-950">

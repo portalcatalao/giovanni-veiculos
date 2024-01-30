@@ -28,11 +28,10 @@ interface Response {
     }
 }
 
-export async function VehiclesContent({ searchParams }: { searchParams: FilterProps }) {
+export async function VehiclesContent({ searchParams, brands }: { brands: Array<IBrand>, searchParams: FilterProps }) {
     const { data }: Response = await fetchData(getPathForApi(searchParams), 0);
 
     const vehicles = data.result?.vehicles ?? [];
-    const brands = data.brands ?? [];
     const totalPages = Math.ceil(data.result.total / data.result.itemsPerPage);
 
     return (

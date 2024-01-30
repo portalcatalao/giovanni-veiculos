@@ -10,7 +10,7 @@ export function CardVehicle({ vehicle }) {
             <div className="flex flex-col mt-4">
                 <span className="uppercase text-lg font-semibold">{vehicle.version.model.brand.name} {vehicle.version.model.name}</span>
                 <span className="uppercase text-sm text-white/70">{vehicle.version.name}</span>
-                <span className="uppercase text font-medium mt-4">{vehicle.price ? 'R$ ' + maskPrice(vehicle.price) : 'Valor a combinar'}</span>
+                <span className="uppercase text font-medium mt-4">{vehicle.price && vehicle.visible_price ? 'R$ ' + maskPrice(vehicle.price) : 'Valor a combinar'}</span>
                 <div className="flex justify-between mt-6 border-t border-zinc-700 pt-2">
                 <span className="text-sm">{vehicle.year_manufacture} - {vehicle.year_model}</span>
                     <span className="text-sm">{vehicle.mileage_traveled} KM</span>

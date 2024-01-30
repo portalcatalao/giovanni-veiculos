@@ -1,8 +1,5 @@
-import { ButtonPrimary } from "@/components/buttons/button-primary";
-import { CardVehicle } from "@/components/card-filter";
-import { FilterForm } from "@/components/forms/filter-form";
 import { fetchData } from "@/hooks/useFetch";
-import { IBrand, IVehicle } from "@/interfaces/vehicle";
+import { IBrand } from "@/interfaces/vehicle";
 import { Suspense } from "react";
 import { VehiclesContent } from "./content";
 
@@ -16,10 +13,12 @@ export interface FilterProps {
 }
 
 export default async function VehiclesPage({ searchParams }: { searchParams: FilterProps }) {
+    const { data: brands }: { data: Array<IBrand> } = await fetchData('fipe/car/brand/list');
+
     return (
         <main className="flex max-lg:flex-col max-2xl:px-4 gap-8 flex-1 w-full max-w-7xl mx-auto py-8">
             <Suspense fallback={<p>carregando...</p>}>
-                <VehiclesContent searchParams={searchParams} />
+                <VehiclesContent searchParams={searchParams} brands={brands} />
             </Suspense>
         </main>
     )
