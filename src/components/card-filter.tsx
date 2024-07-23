@@ -5,7 +5,7 @@ export function CardVehicle({ vehicle }) {
     return (
         <Link href={`/veiculos/${vehicle.version.model.brand.id_string}/${vehicle.version.model.id_string}/${vehicle.version.id_string}_${vehicle.id}`} className="p-4 bg-zinc-800 rounded-md flex max-lg:flex-col gap-4 w-full">
             <div className="max-lg:w-full w-[348px] h-[248px] relative rounded overflow-hidden">
-                <img src={'https://portalautos.com.br/' + vehicle.gallery.images[0].path} alt={vehicle.gallery.images[0].name} className="object-cover w-full h-full" />
+                <img src={'https://api.portalautos.com.br/' + vehicle.gallery.images[0].path} alt={vehicle.gallery.images[0].name} className="object-cover w-full h-full" />
             </div>
             <div className="flex flex-1 flex-col justify-between max-lg:mt-4">
                 <div className="flex flex-1 flex-col">
