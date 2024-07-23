@@ -31,7 +31,7 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
                                 setShow(true);
                                 setActive(index);
                             }}>
-                                <img src={'https://portalautos.com.br/' + item.path} alt={item.name} className="object-cover w-full h-full" />
+                                <img src={'https://api.portalautos.com.br/' + item.path} alt={item.name} className="object-cover w-full h-full" />
                             </div>
                         )
                     }
@@ -41,7 +41,7 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
                                 setShow(true);
                                 setActive(3);
                             }}>
-                                <img src={'https://portalautos.com.br/' + item.path} alt={item.name} className="object-cover w-full h-full" />
+                                <img src={'https://api.portalautos.com.br/' + item.path} alt={item.name} className="object-cover w-full h-full" />
                                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-50 flex items-center justify-center">
                                     <button className="text-lg font-semibold">Ver todas as fotos</button>
                                 </div>
@@ -54,7 +54,7 @@ export default function VehicleViewContent({ vehicle }: { vehicle: IVehicle }) {
                 {vehicle.gallery.images.map(item =>
                     <SwiperSlide key={item.id}>
                         <div className="w-screen h-[248px] relative overflow-hidden lg:hidden">
-                            <img src={'https://portalautos.com.br/' + item.path} alt={item.name} className="object-cover w-full h-full" />
+                            <img src={'https://api.portalautos.com.br/' + item.path} alt={item.name} className="object-cover w-full h-full" />
                         </div>
                     </SwiperSlide>
                 )}
