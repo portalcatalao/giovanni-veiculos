@@ -48,7 +48,7 @@ export function GalleryView({ close, active, show, images }) {
                     navigation={true}
                 >
                     {images.map((item, index) => (
-                        <SwiperSlide key={index} id={'swiper-slide'} style={{ width: '100% !important' }}>
+                        <SwiperSlide key={index} id={'swiper_slide'}>
                             <div className="w-full h-full flex justify-center items-center">
                                 <img src={'https://api.portalautos.com.br/' + item} alt={item} className="object-contain h-full" />\
                             </div>
