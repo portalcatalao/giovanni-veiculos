@@ -33,3 +33,19 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #374151;
 }
+
+#swiper {
+  width: 100%;
+}
+
+#swiper_slide {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0!important;
+}
+#swiper_slide img {
+  object-fit: contain !important;
+  height: 100%;
+}
