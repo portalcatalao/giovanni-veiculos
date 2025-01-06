@@ -23,7 +23,7 @@ export function Footer() {
                     <div className="flex flex-col gap-2">
                         <h4 className="mb-4 text-lg font-semibold">Contato</h4>
                         <span className="text-sm text-white/80">(64) 3443-1700</span>
-                        <span className="text-sm text-white/80">(64) 9249-6844</span>
+                        
                         <span className="text-sm text-white/80">Av. João Neves Vieira 600 - Santa Cruz</span>
                     </div>
                     <div className="flex flex-col gap-2">
