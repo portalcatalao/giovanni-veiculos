@@ -13,7 +13,7 @@ export default function ContactPage() {
 
     const handleSubmit = async () => {
         if(name.validate() && email.validate() && phone.validate()) {
-            const wpp = "556434431700";
+            const wpp = "5564992496844";
             const text = encodeURIComponent(`\nNome: ${name.value}\nEmail: ${email.value}\nTelefone: ${phone.value}\n Mensagem: ${description.value}`);
             const whatsappLink = `https://api.whatsapp.com/send?phone=${wpp}&text=${text}`;
 
