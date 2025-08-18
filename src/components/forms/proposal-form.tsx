@@ -16,7 +16,7 @@ export function ProposalForm({ vehicle }: { vehicle: IVehicle }) {
     const handleSendProposal = () => {
         const numeros = [
             "5564996996215",
-            "5564992496844",
+          
             "5564999415975",
             "5564996955520"
         ];
