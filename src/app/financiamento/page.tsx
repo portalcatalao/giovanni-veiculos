@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function FinancingPage() {
     const handleSubmit = async () => {
-        const wpp = "556434431700";
+        const wpp = "64992496844";
             const text = encodeURIComponent(`Olá, gostaria de simular um financiamento de um veículo.`);
             const whatsappLink = `https://api.whatsapp.com/send?phone=${wpp}&text=${text}`;
 
