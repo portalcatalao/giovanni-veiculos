@@ -7,7 +7,7 @@ import { FilterProps } from "./page";
 import { Pagination } from "@/components/pagination";
 
 const getPathForApi = (params: FilterProps) => {
-    let path = 'ad/filter?type=car&limit=50&total=1';
+    let path = 'ad/filter?type=car&limit=100&total=1';
     { params.marca ? path = path + `&brand=${params.marca}` : null }
     { params.modelo ? path = path + `&model=${params.modelo}` : null }
     { params.versao ? path = path + `&version=${params.versao}` : null }
