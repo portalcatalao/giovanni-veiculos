@@ -17,8 +17,8 @@ export function ProposalForm({ vehicle }: { vehicle: IVehicle }) {
         const numeros = [
             "5564996996215",
           
-            "5564999415975",
-            "5564996955520"
+            "5564999415975"
+            
         ];
         
         const numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
