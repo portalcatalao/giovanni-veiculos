@@ -41,9 +41,9 @@ export default async function Home() {
         `}>Ver estoque completo</Link>
         </div>
       </div>
-      <div className="w-full h-[164px] 2xl:h-[508px]">
-        <img src="/banner.png" alt="" className="object-cover w-full h-full" />
-      </div>
+     <div className="w-full">
+  <img src="/banner.png" alt="" className="w-full h-auto" />
+</div>
     </main>
   );
 }
