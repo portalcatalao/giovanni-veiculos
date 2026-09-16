@@ -3,9 +3,9 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export function ButtonWhatsapp() {
     const numeros = [
-        "5564996996215",
+        "556499606-4414",
         
-        "5564999415975"
+        "556499606-4414"
         
     ];
     
